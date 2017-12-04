@@ -51,7 +51,7 @@ resources:
   type: s3
   source:
     bucket: {{aws-bucket}}
-    regexp: pal-tracker/platform-services-(.*).jar
+    regexp: pal-tracker/eureka-server-(.*).jar
     access_key_id: {{aws-access-key-id}}
     secret_access_key: {{aws-secret-access-key}}
 
@@ -91,7 +91,7 @@ jobs:
       file: build-output/timesheets*.jar
   - put: platform-artifacts
     params:
-      file: build-output/platform*.jar
+      file: build-output/eureka*.jar
   - put: version
     params:
       file: version/number
@@ -158,5 +158,5 @@ jobs:
   - put: cf
     params:
       manifest: pal-tracker/manifest-eureka.yml
-      path: platform-artifacts/platform-services*.jar
+      path: platform-artifacts/eureka-server*.jar
       current_app_name: tracker-eureka
