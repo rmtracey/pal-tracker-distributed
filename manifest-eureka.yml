@@ -1,6 +1,6 @@
 applications:
 - name: tracker-eureka
-  path: ./applications/timesheets-server/build/libs/platform-services.jar
+  path: ./platform-services/build/libs/platform-services.jar
   host: eureka-pal-rt
   memory: 1G
   instances: 1
